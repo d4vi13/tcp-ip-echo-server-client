@@ -5,15 +5,18 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <sys/stat.h>
+
 
 #define BUFFER_SIZE 1024
 #define PORT 10000
+#define FILE teste
 
 int main(){
-	int sock,sock1;
+	int sock,sock1,fd;
 	char buffer[BUFFER_SIZE] = {0};
 	socklen_t endereco_tam;
-
+	struct stat file_stat;
 
 	/*
 	#include <netinet/in.h>
